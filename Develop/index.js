@@ -2,10 +2,11 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
+const {writeFile, copyFile } = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
-const questions = () => {
-    return inquirer.questions([
+const promptUser = () => {
+    return inquirer.prompt([
         {
             type: "input",
             name: "title",
@@ -60,7 +61,7 @@ const questions = () => {
             name: "tests",
             message: "Include your test and instructions on how to run them here: "
         }, 
-    ]);
+    ]).then(answers => console.log(answers));
 };
 
 // TODO: Create a function to write README file
