@@ -1,9 +1,3 @@
-//const {userPrompt} = require("./Develop/index.js");
-
-/*
-wrap in object.... 
-*/
-
 const mitDescription = () => {
     return `
     MIT License
