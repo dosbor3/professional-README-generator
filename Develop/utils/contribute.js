@@ -136,4 +136,4 @@ const contribute = () => {
     `
 };
 
-module.exports.contribute = contribute;
+module.exports = contribute;

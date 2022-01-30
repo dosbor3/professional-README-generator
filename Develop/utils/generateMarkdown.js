@@ -38,6 +38,7 @@ ${projectsArr.usage}
 
 ${licenseJS.getLicense(`${projectsArr.license}`)}
 
+## Contributing
   
 ${contribute}
 
