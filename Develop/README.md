@@ -38,5 +38,21 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.  Source code can be found at https://github.com/dosbor3/wk6_weather-dashboard
 
 
-## Image of Application 
-![image](https://user-images.githubusercontent.com/40706088/148719871-c455c9aa-d633-4ecf-a04d-6ab0cbcba106.png)
+
+## Image 1 of Application 
+![applicationImage](https://user-images.githubusercontent.com/40706088/151722257-a445292a-e961-41cf-9243-081c3a5c8cc4.jpg)
+
+
+
+
+
+## Image 2 of Application
+![applicationImage2](https://user-images.githubusercontent.com/40706088/151722352-280586a1-a854-4a53-8cdc-596bd19c0aec.jpg)
+
+
+
+
+
+
+
+
