@@ -1,16 +1,26 @@
 const licenseJS = require("./license");
 const getBadge = require("./license")
 const contribute = require("./contribute");
-// const fs = require("fs");
-const badge = "mit";
-
-// if (projectsArr.license === mit)
-
 
 const generateMarkdown = projectsArr => {    
+    let badge = "mit";
+
+    if (projectsArr.license === "mit") {
+        badge = "mit";
+    }
+    else if (projectsArr.license === "boost") {
+        badge = "boost";
+
+    }
+    else {
+        badge = "unlicense";
+    }
+    
+    
+    
     return `# ${projectsArr.title}
 
-![Github licence](http://img.shields.io/badge/license-${projectsArr.license}-blue.svg)
+![License Badge](/Develop/assets/images/${badge}.jpg)
 
      
 ## Description 
