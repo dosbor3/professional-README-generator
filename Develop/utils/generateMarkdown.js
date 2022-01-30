@@ -60,8 +60,10 @@ ${projectsArr.tests}
 
 ## Questions
 
-Please direct all inquiries to ${projectsArr.email}.  Please allow at least 48 hours for a response.   
-You may view more of my projects at https://github.com/${projectsArr.github}.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.  Source code can be found at http://github.com/${projectsArr.github}.  Should
+you have any questions, comments, or concerns, please feel free to reach out via email at ${projectsArr.email}.  
 `
 }
 
