@@ -1,4 +1,3 @@
-
 const licenseJS = require("./license");
 const getBadge = require("./license")
 const contribute = require("./contribute");
@@ -10,51 +9,49 @@ const badge = "mit";
 
 const generateMarkdown = projectsArr => {    
     return `# ${projectsArr.title}
-    ![Github licence](http://img.shields.io/badge/license-${projectsArr.license}-blue.svg)
-    
 
-    ## Description 
+![Github licence](http://img.shields.io/badge/license-${projectsArr.license}-blue.svg)
+
+     
+## Description 
     
-    ${projectsArr.description}   
+${projectsArr.description}   
     
-    ## Table of Contents
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [Questions](#questions)
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
     
-    ## Installation
+## Installation
+
+${projectsArr.installation}
     
-    ${projectsArr.installation}
+## Usage
+
+${projectsArr.usage}   
     
-    ## Usage
+## License
+
+${licenseJS.getLicense(`${projectsArr.license}`)}
+
+  
+${contribute}
+
     
-    ${projectsArr.usage}
+## Tests
     
-   
-    
-    ## License
-    ${licenseJS.getLicense(`${projectsArr.license}`)}
-    
-    
-    ---------------------------------    
-    
-    ## Features
-    
-    
-    ${contribute}
-    
-    ## Tests
-    
-    ${projectsArr.tests}
+${projectsArr.tests}
 
 
-    ## Questions
-    Please direct all inquiries to ${projectsArr.email}.  Please allow at least 48 hours for a response.   
-    You may view more of my projects at https://github.com/${projectsArr.github}.
-    `
+## Questions
+
+Please direct all inquiries to ${projectsArr.email}.  Please allow at least 48 hours for a response.   
+You may view more of my projects at https://github.com/${projectsArr.github}.
+`
 }
 
-module.exports.generateMarkdown = generateMarkdown;
+module.exports = generateMarkdown;
