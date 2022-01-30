@@ -91,10 +91,11 @@ const promptUser = async () => {
     
         },
         {
-            type: "checkbox",
+            type: "list",
             name: "license",
             message: "Please select licensing that apply below: ",
-            choices: ["mit", "boost", "unlicense"]
+            choices: ["mit", "boost", "unlicense"],
+            default: 0
         },
         {
             type: "input", 
@@ -117,7 +118,7 @@ const promptUser = async () => {
     };
 
 
-    const promptFeature = readmeData => {
+    const promptFeature = readMeData => {
         console.log(`
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                    Add a Feature
@@ -125,8 +126,8 @@ const promptUser = async () => {
       `);
       
         //If there's no "projects" array property, create one
-        if (!readmeData.features) {
-            readmeData.features = [];
+        if (!readMeData.features) {
+            readMeData.features = [];
         }
       
         return inquirer.prompt([
@@ -150,48 +151,35 @@ const promptUser = async () => {
             message: 'Would you like to enter another feature?',
             default: false   
           }
-
         ])
         .then(featureData => {
-          readmeData.features.push(featureData);
+          readMeData.features.push(featureData);
             if (featureData.confirmAddFeature) {
-              return promptFeature(readmeData);
+              return promptFeature(readMeData);
             } else {
-              return readmeData;
+              return readMeData;
             }
         });
       };
-   
-    // const answers = async () => await promptUser;
-
-    // console.log(answers)
-
-    // const readMeData = async () => await promptFeature(answers);
-
-    // console.log(readMeData)
-    
-    // const initGenerateMarkdown = async writeFile(generateMarkdown, readmeData) => await generateMarkdown(readMeData);
-    // console.log(initGenerateMarkdown);
-
-    // const writeMarkdown = async () => writeFile(initGenerateMarkdown, );
-
-    // const writeFile= ()
+      
+      // wrapper around fs.writeFile()
+      const writeFile = (fileName, data) => {
+        fs.writeFile(`./dist/${fileName}`, generateMarkdown(data), err => err && console.log(err));
+      };
   
+      // logic flow for the application
+      const init = async () => {
+        // answers is the result of prompt user
+        const answers = await promptUser();
+        const readMeData = async () => await promptFeature(answers);
 
-        // wrapper around fs.writeFile()
-    const writeFile = (fileName, data) => {
-    fs.writeFile(`./dist/${fileName}`, generateMarkdown(data), err => err && console.log(err));
-  };
+        console.log(readMeData);
+            
+        module.exports = {readMeData};
+        
+        // write to README.md with the supplied answers
+        writeFile("README.md", readMeData);    
+    };
   
-  // logic flow for the application
-  const init = async () => {
-    // answers is the result of prompt user
-    const answers = await promptUser();
-    const readMeData = async () => await promptFeature(answers);
-  
-    // write to README.md with the supplied answers
-    writeFile("README.md", readMeData);
-  };
-  
-  // start the application
-  init()
+    // start the application
+    init()
