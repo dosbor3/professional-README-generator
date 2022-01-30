@@ -1,25 +1,27 @@
 #  Swifty Professional-README.md Generator
-A command-line application that ynamically generates a professional REDME.md file from a user's input 
+A command-line application that ynamically generates a professional REDME.md file from a user's input using the Inquirer package.  
 
-The weather dashboard allows a user to see the weather outlook for multiple cities to assist in trip planning.  The user will be provided with a weather dashboard with form inputs.  The user will be able to search for a city and be presented with current and future conditions for that city.  The searched city will be added to the search history.  When presented with the current weather conditions for that city the following will be displayed: 
+To invoke the application, the following command is necessary:
 
-*  The city’s name
-*  The date
-*  An icon representation of weather conditions
-*  The temperature
-*  The humidity
-*  The wind speed
-*  The UV index
+*  node index.js
 
-When the user views the UV index, the user will be presented with a color that indicates whether the conditions are favorable, moderate, or severe.  
+The user will than be given the commmand-line application that accepts userin input.  Whtn the user is prompted for inrmation about an 
+application repositiory, then a high-quality, professional README.md is generated with the following sections:
 
-When the user views the future weather conditions for that city, the user will be presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity.  
+*  Project Title
+*  Description
+*  Table of Contents (clickable)
+*  Installation
+*  Usage
+*  License
+*  Contributing
+*  Tests
+*  Questions
 
-The user will be allowed to click on a city in the search history and be presented with current and future conditions for that city.  
 
 ## Installation
 
-The application can be accessed at https://dosbor3.github.io/wk6_weather-dashboard/  
+The application can be accessed at https://github.com/dosbor3/professional-README-generator/settings/pages  
 
 ## Usage
 

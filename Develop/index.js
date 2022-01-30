@@ -111,12 +111,13 @@ const promptUser = async () => {
       const init = async () => {
         // answers is the result of prompt user
         const answers = await promptUser();
-        //const readMeData = await promptFeature(answers);        
+                
             
         module.exports = {answers};
         
         // write to README.md with the supplied answers
-        writeFile("README.md", answers);    
+        writeFile("README.md", answers);
+        
     };
   
     // start the application

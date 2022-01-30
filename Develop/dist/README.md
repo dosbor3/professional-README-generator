@@ -1,11 +1,11 @@
-# dflkjadf
+# Swifty Professional README.md Generator
 
 ![License Badge](/Develop/assets/images/boost.jpg)
 
      
 ## Description 
     
-dlfkjdlkfj   
+A command-line application that ynamically generates a professional REDME.md file from a user's input using the Inquirer package.   
     
 ## Table of Contents
 
@@ -18,11 +18,11 @@ dlfkjdlkfj
     
 ## Installation
 
-dflkjdf
+Initialize app by typing the following onto the command line: Node index, Provide a response to the prompts displayed, After all prompts have been provided a response, A README.md fill is generated, and you will receive notification once it has been completly generated.  
     
 ## Usage
 
-dklfj   
+This app is used to generate a dynamic README.md file that is customized based on user input.  The user uses the Node command to initialize the application.  Once the README.md is generated, it is stored in the distribution folder on the user's local machine.     
     
 ## License
 
@@ -187,10 +187,12 @@ For answers to common questions about this code of conduct, see the FAQ at
     
 ## Tests
     
-kdjfkldfj
+Sample test runs go here....
 
 
 ## Questions
 
-Please direct all inquiries to dflkjdflkj.  Please allow at least 48 hours for a response.   
-You may view more of my projects at https://github.com/lkfjafl;kj.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.  Source code can be found at http://github.com/dosbor3.  Should
+you have any questions, comments, or concerns, please feel free to reach out via email at dosbor3@gmail.com.  
