@@ -1,9 +1,6 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-//const {userPrompt} = require("./Develop/index.js");
-const licenseJS = require("./utils/license");
-const contribute = require("./utils/contribute");
 const generateMarkdown = require("./utils/generateMarkdown");
 
 const promptUser = async () => {    
@@ -101,67 +98,10 @@ const promptUser = async () => {
             type: "input", 
             name: "tests",
             message: "Include any sample test runs and instructions on how to run them here: "
-        },
-        {
-            type: "confirm",
-            name: "confirmImage",
-            message: "Do you wish to add an image to the README.md file? ",
-            default: false
-        },
-        {
-            type: "input", 
-            name: "image",
-            message: "Please include the filename of your image:  (Ex: image.png)",
-            when: ({confirmImage}) => confirmImage
-        }        
+        }          
      ]);
     };
-
-
-    const promptFeature = readMeData => {
-        console.log(`
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                   Add a Feature
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      `);
-      
-        //If there's no "projects" array property, create one
-        if (!readMeData.features) {
-            readMeData.features = [];
-        }
-      
-        return inquirer.prompt([
-          {
-            type:"input",
-            name: "feature", 
-            message: "List a feature of your project (Required) ",
-            validate: featureInput => {
-              if (featureInput) {
-                return true;
-              }
-              else {
-                console.log("Please List a feature of your project (Required) ");
-                return false;
-              }
-            }        
-          },
-          {
-            type: 'confirm',
-            name: 'confirmAddFeature',
-            message: 'Would you like to enter another feature?',
-            default: false   
-          }
-        ])
-        .then(featureData => {
-          readMeData.features.push(featureData);
-            if (featureData.confirmAddFeature) {
-              return promptFeature(readMeData);
-            } else {
-              return readMeData;
-            }
-        });
-      };
-      
+    
       // wrapper around fs.writeFile()
       const writeFile = (fileName, data) => {
         fs.writeFile(`./dist/${fileName}`, generateMarkdown(data), err => err && console.log(err));
@@ -171,14 +111,12 @@ const promptUser = async () => {
       const init = async () => {
         // answers is the result of prompt user
         const answers = await promptUser();
-        const readMeData = async () => await promptFeature(answers);
-
-        console.log(readMeData);
+        //const readMeData = await promptFeature(answers);        
             
-        module.exports = {readMeData};
+        module.exports = {answers};
         
         // write to README.md with the supplied answers
-        writeFile("README.md", readMeData);    
+        writeFile("README.md", answers);    
     };
   
     // start the application
